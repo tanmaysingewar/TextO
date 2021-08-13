@@ -1,43 +1,69 @@
-    import React from 'react'
-    import { StyleSheet, Text, View, Image, TextInput,RefreshControl } from 'react-native'
-    import { FlatList, ScrollView } from 'react-native-gesture-handler'
-    import { SafeAreaView } from 'react-native-safe-area-context'
-    import Cards from '../components/Cards'
-    import { useFonts, 
-        Poppins_400Regular, 
-        Poppins_600SemiBold, 
-        Poppins_500Medium,
-        Poppins_100Thin,
-        Poppins_300Light} from '@expo-google-fonts/poppins'
-    import icon from '../icon/icon'
-    const Explore = ({navigation}) => {
-    const [refreshing, setRefreshing] = React.useState(false);
+import React,{useState} from 'react'
+import { StyleSheet, Text, View, Image, TextInput,RefreshControl } from 'react-native'
+import { FlatList, ScrollView } from 'react-native-gesture-handler'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import Cards from '../components/Cards'
+import icon from '../icon/icon'
 
-        const DATA = [
-            {
-            id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-            title: "First Item",
-            },
-            {
-            id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-            title: "Second Item",
-            }
-        ];
-        const DATA2 = [
-            {
-            id: "bd7acbea-c1as1-46c2-aed5-3ad53abb28ba",
-            title: "First Item",
-            },
-            {
-            id: "3ac68afc-c605-48d3-a4f8-asdbd91aa97f63",
-            title: "Second Item",
-            }
-        ];
-        const renderCd = () => {
-            return(
-                <Cards />
-            )
-        }
+const Explore = ({navigation}) => {
+    const [refreshing, setRefreshing] = React.useState(false);
+    const [DATA, setDATA] = useState([
+        {
+          id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+          title: "First Item",
+          like : false
+        },
+        {
+          id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+          title: "Second Item",
+          like : false
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-145572e29d72",
+          title: "Third Item",
+          like : true
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-142171e29d72",
+          title: "Third Item",
+          like : false
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-1121271e29d72",
+          title: "Third Item",
+          like : false
+        },
+      ])
+    const [DATA2, setDATA2] = useState([
+        {
+          id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+          title: "First Item",
+          like : false
+        },
+        {
+          id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+          title: "Second Item",
+          like : false
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-145572e29d72",
+          title: "Third Item",
+          like : true
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-142171e29d72",
+          title: "Third Item",
+          like : false
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-1121271e29d72",
+          title: "Third Item",
+          like : false
+        },
+    ])
+      const renderPost = ({item}) =>{
+        return <Cards navigation={navigation} data={item} />
+      }
         const onRefresh = () => {
             setRefreshing(true);
             setTimeout(() => {
@@ -61,22 +87,21 @@
                 <Text style={{fontSize : 12, fontFamily : "Poppins_400Regular"}}>This tab updates in certain interval of point. <Text onPress={() => onRefresh()} style={{fontFamily : "Poppins_600SemiBold",textDecorationLine : "underline" }}>Refresh</Text></Text>
                 </View>
                 <Text style={{fontFamily : "Poppins_500Medium", fontSize :18}}>Top Post</Text>
-                <Cards />
-                <Cards />
-                <Cards />
-                <Text style={{fontFamily : "Poppins_500Medium", fontSize :18}}>Top Post</Text>
+                <FlatList 
+                listKey="TopPost"
+                renderItem={renderPost}
+                data={DATA}
+                keyExtractor={item => item.id}
+                />
+                <Text style={{fontFamily : "Poppins_500Medium", fontSize :18}}>Most Liked</Text>
+                <FlatList 
+                listKey="MostLiked"
+                renderItem={renderPost}
+                data={DATA2}
+                keyExtractor={item => item.id}
+                />
             </View>
             )
-        }
-        const [fontLoading] = useFonts({
-            Poppins_400Regular,
-            Poppins_600SemiBold, 
-            Poppins_500Medium,
-            Poppins_100Thin,
-            Poppins_300Light
-        })
-        if(!fontLoading){
-            return <View></View>
         }
         return (
             <SafeAreaView>
@@ -97,8 +122,8 @@
                 />
             </SafeAreaView>
         )
-    }
+}
 
-    export default Explore
+export default Explore
 
-    const styles = StyleSheet.create({})
+const styles = StyleSheet.create({})

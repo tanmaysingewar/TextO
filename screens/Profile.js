@@ -1,29 +1,39 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { StyleSheet, Text, View, Image , RefreshControl} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import icon from '../icon/icon'
-import { useFonts, 
-    Poppins_400Regular, 
-    Poppins_600SemiBold, 
-    Poppins_500Medium,
-    Poppins_100Thin,
-    Poppins_300Light} from '@expo-google-fonts/poppins'
 import { FlatList } from 'react-native-gesture-handler'
 import Cards from '../components/Cards'
 
-const Profile = () => {
+const Profile = ({navigation}) => {
     const [refreshing, setRefreshing] = React.useState(false);
-
-    const [fontLoading] = useFonts({
-        Poppins_400Regular,
-        Poppins_600SemiBold, 
-        Poppins_500Medium,
-        Poppins_100Thin,
-        Poppins_300Light
-    })
-    if(!fontLoading){
-        return <View></View>
-    }
+    const [DATA, setDATA] = useState([
+        {
+          id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+          title: "First Item",
+          like : false
+        },
+        {
+          id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+          title: "Second Item",
+          like : false
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-145572e29d72",
+          title: "Third Item",
+          like : true
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-142171e29d72",
+          title: "Third Item",
+          like : false
+        },
+        {
+          id: "58694a0f-3da1-471f-bd96-1121271e29d72",
+          title: "Third Item",
+          like : false
+        },
+      ])
     const onRefresh = () => {
         setRefreshing(true);
         setTimeout(() => {
@@ -32,6 +42,9 @@ const Profile = () => {
     };
 
     const renderCard = ()=> {
+        const renderPost = ({item}) =>{
+            return <Cards navigation={navigation} data={item} />
+          }
         return(
             <View>
                 <View style={{margin : 20}}>
@@ -67,15 +80,13 @@ const Profile = () => {
                 <View style={{marginTop : 20}}>
                     <Text style={{fontFamily : "Poppins_600SemiBold", fontSize : 15, marginBottom : -30}}>All Posts</Text>
                 </View>
-            </View>
-            <Cards /> 
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
+                </View>
+                <FlatList 
+                    listKey="TopPost"
+                    renderItem={renderPost}
+                    data={DATA}
+                    keyExtractor={item => item.id}
+                    />
         </View>
         )
     }

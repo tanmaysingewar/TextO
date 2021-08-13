@@ -25,35 +25,43 @@ const Comment = ({navigation}) => {
         {
           id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
           title: "First Item",
+          like : true
         },
         {
           id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
           title: "Second Item",
+          like : false
         },
         {
           id: "58694a0f-3da1-471f-bd96-145571e29d72",
           title: "Third Item",
+          like : true
         },
         {
           id: "58694a0f-3ea1-471f-bd96-145571e29d72",
           title: "Third Item",
+          like : false
         },
       ];
       
     const renderItems = ({item}) => {
-       return <Cards isComment={true} />
+       return <Cards isComment={true} data={item}/>
     }
 
     const renderMainFrame = () => {
         return(
             <View id={"00000"}>
             <View >
-            <View style={{paddingLeft : 12, flexDirection :"row", justifyContent : "flex-start"}} onTouchStart={() => navigation.navigate('Home')}>
+            <View style={{paddingLeft : 12, flexDirection :"row", justifyContent : "flex-start" ,marginTop  : 10}} onTouchStart={() => navigation.navigate('Home')}>
                 <Image source={icon.back_icon} style={{width : 23 , height : 23, tintColor : "#000", alignSelf :"auto", marginTop : 1}} />
               {!fontLoading ? <View></View> : <Text style={{fontSize : 22  , color : "#000" , fontFamily : "Poppins_400Regular", marginLeft : 10}}>Comment</Text>}
             </View>
-            <Cards commentSec={true}/>
-            <View style={{margin : 20}}>
+            <Cards commentSec={true} data={{
+          id: "58694a0f-3ea1-471f-bd96-145571e29d72",
+          title: "Third Item",
+          like : false
+        }} />
+            <View style={{margin : 20, marginTop : -10}}>
             <View style={{flexDirection : "row", marginBottom : 20 }}>
                 <TextInput style={{borderColor : "#ccc", height : 35, borderWidth : 1,fontSize : 15, fontFamily : "Poppins_400Regular", paddingHorizontal : 10, borderRadius : 5, width : "85%", marginRight : 10}} placeholder="Add Comment here" />
                 <View style={{height : 35, backgroundColor : "#000",justifyContent : "center", borderRadius : 5}}>
