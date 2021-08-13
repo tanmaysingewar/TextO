@@ -20,8 +20,8 @@ const Welcome = ({navigation}) => {
                     <Text style={{fontFamily : "Poppins_500Medium", fontSize : 12, color : "#808080"}}>hybrid application developer</Text>
                 </View>
             </View>
-            <View style={{justifyContent: 'flex-end',marginBottom: 36, flex : 1}} onTouchEnd={() => navigation.navigate("Creator")}>
-                <View style={{backgroundColor : "#000", padding : 8, alignItems : "center", borderRadius : 5 }}>
+            <View style={{justifyContent: 'flex-end',marginBottom: 36, flex : 1}} >
+                <View style={{backgroundColor : "#000", padding : 8, alignItems : "center", borderRadius : 5 }} onTouchEnd={() => navigation.navigate("Creator")}>
                     <Text style={{fontFamily : "Poppins_500Medium", fontSize : 15,color : "#fff"}}>Continue</Text>
                 </View>
             </View>

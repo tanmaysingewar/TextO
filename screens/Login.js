@@ -48,6 +48,9 @@ const Login = ({navigation}) => {
             if(type === "success"){
                 const {name , email , photourl} = user;
                 console.log(user)
+                if(user){
+                    return navigation.push("UserName")
+                }
             }else{
                 console.log("User Cancel Glogin")
             }

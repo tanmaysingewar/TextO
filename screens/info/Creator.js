@@ -22,8 +22,8 @@ const Creator = ({navigation}) => {
 My name is Tanmay Singewar, I am Full-stack Developer and hybrid application developer. I develop programs using javascript, almost having experience of 2 years. I usually work with ReactJS, React Native, and the MERN (MongoDB, Express, ReactJs, Node) stack for Web applications. 
                 </Text>
             </View>
-            <View style={{justifyContent: 'flex-end',marginBottom: 36, flex : 1}} onTouchEnd={() => navigation.navigate("Home")}>
-                <View style={{backgroundColor : "#000", padding : 8, alignItems : "center", borderRadius : 5 }}>
+            <View style={{justifyContent: 'flex-end',marginBottom: 36, flex : 1}} >
+                <View style={{backgroundColor : "#000", padding : 8, alignItems : "center", borderRadius : 5 }} onTouchEnd={() => navigation.navigate("Home")}>
                     <Text style={{fontFamily : "Poppins_500Medium", fontSize : 15,color : "#fff"}}>Continue</Text>
                 </View>
             </View>
