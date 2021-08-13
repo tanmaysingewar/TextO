@@ -1,0 +1,11 @@
+const home_icon = require("../icon/round_home_white_48dp.png")
+const explore_icon = require("../icon/round_explore_white_48dp.png")
+const comment_icon = require("../icon/comments.png")
+const like_icon = require("../icon/outline_favorite_white_24dp.png")
+const verified_icon = require("../icon/verify.png")
+const profile_icon  = require("../icon/round_person_white_48dp.png")
+const logo_icon = require("../icon/logo.png")
+const back_icon = require("../icon/back.png")
+const search_icon = require("../icon/search.png")
+const me = require("../icon/me.jpg")
+export default {home_icon , explore_icon , comment_icon ,like_icon , verified_icon ,profile_icon, logo_icon, back_icon, search_icon, me } 
