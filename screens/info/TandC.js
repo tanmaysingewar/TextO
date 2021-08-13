@@ -6,6 +6,7 @@ const TandC = () => {
     return (
         <SafeAreaView>
             <Text>TandC</Text>
+            <Text>This is term and Conditions </Text>
         </SafeAreaView>
     )
 }
