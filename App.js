@@ -11,6 +11,9 @@ import Username from './screens/Username';
 import Welcome from './screens/info/Welcome';
 import TandC from './screens/info/TandC';
 import Creator from './screens/info/Creator';
+import ProfileO from './screens/ProfileO';
+import Edit_profile from './screens/Edit_profile';
+import createPost from './screens/createPost';
 
 const Stack = createStackNavigator();
 
@@ -43,16 +46,21 @@ function App() {
     <NavigationContainer theme={MyTheme}>
       <StatusBar style="dark" />
       <Stack.Navigator screenOptions={horizontalAnimation}>
+      
         <Stack.Screen name="Login" component={Login} screenOptions={horizontalAnimation} />
         <Stack.Screen name="UserName" component={Username} screenOptions={horizontalAnimation} />
-        {/* Home Tab */}
-        <Stack.Screen name="Home" component={MyTabs} screenOptions={horizontalAnimation} /> 
-        <Stack.Screen name="Profile" component={Profile} screenOptions={horizontalAnimation} />
-        <Stack.Screen name="Explore" component={Explore} screenOptions={horizontalAnimation} />
-        <Stack.Screen name="Comment" component={Comment} screenOptions={horizontalAnimation} />
         <Stack.Screen name="Welcome" component={Welcome} screenOptions={horizontalAnimation} />
         <Stack.Screen name="TandC" component={TandC} screenOptions={horizontalAnimation} />
         <Stack.Screen name="Creator" component={Creator} screenOptions={horizontalAnimation} />
+        {/* Home Tab */}
+        <Stack.Screen name="Home" component={MyTabs} screenOptions={horizontalAnimation} />
+        <Stack.Screen name="Profile" component={Profile} screenOptions={horizontalAnimation} />
+        <Stack.Screen name="Explore" component={Explore} screenOptions={horizontalAnimation} />
+        <Stack.Screen name="Comment" component={Comment} screenOptions={horizontalAnimation} />
+        <Stack.Screen name="ProfileO" component={ProfileO} screenOptions={horizontalAnimation} />
+        <Stack.Screen name="Edit_Profile" component={Edit_profile} screenOptions={horizontalAnimation} />
+        <Stack.Screen name="Create_Post" component={createPost} screenOptions={horizontalAnimation} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

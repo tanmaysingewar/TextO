@@ -8,4 +8,7 @@ const logo_icon = require("../icon/logo.png")
 const back_icon = require("../icon/back.png")
 const search_icon = require("../icon/search.png")
 const me = require("../icon/me.jpg")
-export default {home_icon , explore_icon , comment_icon ,like_icon , verified_icon ,profile_icon, logo_icon, back_icon, search_icon, me } 
+const glogo = require("../icon/glogo.png")
+const add_post = require("../icon/add_post.png")
+const delete_icon = require("../icon/outline_delete_black_48dp.png")
+export default {home_icon , explore_icon , comment_icon ,like_icon , verified_icon ,profile_icon, logo_icon, back_icon, search_icon, me,glogo,add_post,delete_icon} 

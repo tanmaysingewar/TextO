@@ -15,15 +15,15 @@ const Creator = ({navigation}) => {
                 <Text style={{fontFamily : "Poppins_400Regular", fontSize : 13, color : "#808080", alignSelf : "center"}}> application developer</Text>
             </View>
             <View style={{marginTop : 40}}>
-                <Text style={{fontFamily : "Poppins_600SemiBold", fontSize : 15, color : "#0F0C08",  textAlign : "left"}}> 
+                <Text style={{fontFamily : "Poppins_600SemiBold", fontSize : 15, color : "#0F0C08", }}> 
                 Hello everyone,  
                 </Text>
-                <Text style={{fontFamily : "Poppins_400Regular", fontSize : 14, color : "#0F0C08",  alignSelf : "center"}}> 
+                <Text style={{fontFamily : "Poppins_400Regular", fontSize : 14, color : "#0F0C08", }}> 
 My name is Tanmay Singewar, I am Full-stack Developer and hybrid application developer. I develop programs using javascript, almost having experience of 2 years. I usually work with ReactJS, React Native, and the MERN (MongoDB, Express, ReactJs, Node) stack for Web applications. 
                 </Text>
             </View>
             <View style={{justifyContent: 'flex-end',marginBottom: 36, flex : 1}} >
-                <View style={{backgroundColor : "#000", padding : 8, alignItems : "center", borderRadius : 5 }} onTouchEnd={() => navigation.navigate("Home")}>
+                <View style={{backgroundColor : "#000", padding : 8, alignItems : "center", borderRadius : 5 }} onTouchEnd={() => navigation.replace("Home")}>
                     <Text style={{fontFamily : "Poppins_500Medium", fontSize : 15,color : "#fff"}}>Continue</Text>
                 </View>
             </View>

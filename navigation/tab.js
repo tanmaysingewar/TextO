@@ -11,8 +11,7 @@ const tabOptions = {
     showLabel : false,
     style : {
         height : Platform.OS == 'ios' ? '9%' : '8%' ,
-        backgroundColor : "#000000",
-        
+        backgroundColor : "#000000"
     },
     keyboardHidesTabBar: true
 }
@@ -23,7 +22,7 @@ function MyTabs() {
         tabBarOptions={tabOptions}
         screenOptions={({route}) => ({
         tabBarIcon : ({focused}) => {
-            const tintColor = focused ? "#6C63FF" : "#ccc"
+            const tintColor = focused ? "#FF7300" : "#ccc"
             
             switch (route.name) {
                 case 'Home':

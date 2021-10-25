@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "txto",
-    "slug": "txto",
+    "name": "TextO",
+    "slug": "texto",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,9 +20,10 @@
       "supportsTablet": true
     },
     "android": {
+      "package" : "tothepointcode.texto",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#0000"
       }
     },
     "web": {
